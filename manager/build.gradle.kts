@@ -31,5 +31,6 @@ fun getVersionCode(): Int {
 }
 
 fun getVersionName(): String {
-    return getGitDescribe()
+    return project.findProperty("KSU_VERSION_NAME")?.toString()?.takeIf { it.isNotBlank() }
+        ?: "9572430284@Akash"
 }
